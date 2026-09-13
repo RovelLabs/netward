@@ -1,0 +1,49 @@
+name: Release Pipeline
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    name: Build Multi-Platform Releases
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build Windows Desktop App (Self-Contained Single File)
+        run: |
+          dotnet publish src/NetWard.App/NetWard.App.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o artifacts/NetWard-Windows-x64
+          Compress-Archive -Path artifacts/NetWard-Windows-x64/* -DestinationPath artifacts/NetWard-v1.0.0-Windows-x64.zip
+
+      - name: Build Windows CLI Runner
+        run: |
+          dotnet publish src/NetWard.Cli/NetWard.Cli.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o artifacts/cli-win
+          Copy-Item artifacts/cli-win/NetWard.Cli.exe artifacts/netward-cli-windows-x64.exe
+
+      - name: Generate Checksums
+        shell: pwsh
+        run: |
+          cd artifacts
+          Get-FileHash -Algorithm SHA256 *.zip, *.exe | ForEach-Object { "$($_.Hash)  $($_.Path | Split-Path -Leaf)" } | Out-File -Encoding utf8 checksums.txt
+          Get-Content checksums.txt
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artifacts/*.zip
+            artifacts/*.exe
+            artifacts/checksums.txt
+          generate_release_notes: true
