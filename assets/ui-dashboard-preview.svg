@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="1000" height="620">
+  <defs>
+    <linearGradient id="windowBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D0E11"/>
+      <stop offset="100%" stop-color="#14161C"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Main Window Container -->
+  <rect x="20" y="20" width="960" height="580" rx="16" fill="url(#windowBg)" stroke="#2A2E39" stroke-width="2" filter="url(#shadow)"/>
+
+  <!-- Titlebar -->
+  <rect x="20" y="20" width="960" height="60" rx="16" fill="#16181D"/>
+  <rect x="20" y="60" width="960" height="20" fill="#16181D"/>
+  <line x1="20" y1="80" x2="980" y2="80" stroke="#2A2E39" stroke-width="1"/>
+
+  <!-- Window Controls -->
+  <circle cx="50" cy="50" r="6" fill="#FF5F56"/>
+  <circle cx="70" cy="50" r="6" fill="#FFBD2E"/>
+  <circle cx="90" cy="50" r="6" fill="#27C93F"/>
+
+  <!-- Logo & Header -->
+  <text x="120" y="55" font-family="-apple-system, Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#00E599">🛡️ NETWARD</text>
+  <text x="235" y="55" font-family="-apple-system, Segoe UI, sans-serif" font-size="13" fill="#9CA3AF">— Монитор сетевой устойчивости и доступности сервисов</text>
+
+  <!-- Top Action Buttons -->
+  <rect x="680" y="38" width="130" height="28" rx="6" fill="#00E599"/>
+  <text x="745" y="56" font-family="-apple-system, Segoe UI, sans-serif" font-size="12" font-weight="bold" fill="#0D0E11" text-anchor="middle">⚡ Проверить всё</text>
+
+  <rect x="825" y="38" width="135" height="28" rx="6" fill="#1D2027" stroke="#2A2E39" stroke-width="1"/>
+  <text x="892" y="56" font-family="-apple-system, Segoe UI, sans-serif" font-size="12" font-weight="500" fill="#F3F4F6" text-anchor="middle">🎮 Игровой радар</text>
+
+  <!-- Tabs Bar -->
+  <text x="50" y="115" font-family="-apple-system, Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#00E599">🌐 Доступность сервисов</text>
+  <rect x="50" y="125" width="180" height="3" fill="#00E599" rx="1.5"/>
+
+  <text x="260" y="115" font-family="-apple-system, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#9CA3AF">🎯 Игровой радар</text>
+  <text x="400" y="115" font-family="-apple-system, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#9CA3AF">📡 Сеть и DNS</text>
+  <text x="530" y="115" font-family="-apple-system, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#9CA3AF">📋 Экспорт отчёта</text>
+
+  <!-- Card 1: Discord (Blocked by TSPU) -->
+  <g transform="translate(50, 145)">
+    <rect width="900" height="90" rx="12" fill="#16181D" stroke="#2A2E39" stroke-width="1"/>
+    <rect x="16" y="16" width="48" height="48" rx="8" fill="#1D2027"/>
+    <text x="40" y="48" font-size="24" text-anchor="middle">🎧</text>
+    
+    <text x="80" y="38" font-family="-apple-system, Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#F3F4F6">Discord</text>
+    <rect x="145" y="24" width="54" height="18" rx="4" fill="#1D2027"/>
+    <text x="172" y="37" font-family="-apple-system, Segoe UI, sans-serif" font-size="10" fill="#9CA3AF" text-anchor="middle">VOICE</text>
+    
+    <text x="80" y="58" font-family="-apple-system, Segoe UI, sans-serif" font-size="12" fill="#FF334B">Сетевая блокировка ТСПУ (сброс соединения по SNI при TLS-рукопожатии)</text>
+    
+    <!-- Metrics & Badge -->
+    <text x="710" y="44" font-family="Consolas, monospace" font-size="14" fill="#9CA3AF">32 ms</text>
+    <rect x="770" y="26" width="110" height="28" rx="6" fill="#FF334B"/>
+    <text x="825" y="44" font-family="-apple-system, Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">БЛОКИРОВКА</text>
+  </g>
+
+  <!-- Card 2: YouTube (Throttled) -->
+  <g transform="translate(50, 248)">
+    <rect width="900" height="90" rx="12" fill="#16181D" stroke="#2A2E39" stroke-width="1"/>
+    <rect x="16" y="16" width="48" height="48" rx="8" fill="#1D2027"/>
+    <text x="40" y="48" font-size="24" text-anchor="middle">▶️</text>
+    
+    <text x="80" y="38" font-family="-apple-system, Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#F3F4F6">YouTube</text>
+    <rect x="155" y="24" width="54" height="18" rx="4" fill="#1D2027"/>
+    <text x="182" y="37" font-family="-apple-system, Segoe UI, sans-serif" font-size="10" fill="#9CA3AF" text-anchor="middle">VIDEO</text>
+    
+    <text x="80" y="58" font-family="-apple-system, Segoe UI, sans-serif" font-size="12" fill="#C054FF">Искусственное замедление скорости (Throttling: битрейт ограничен до 140 кбит/с)</text>
+    
+    <!-- Metrics & Badge -->
+    <text x="690" y="44" font-family="Consolas, monospace" font-size="14" fill="#9CA3AF">2400 ms</text>
+    <rect x="770" y="26" width="110" height="28" rx="6" fill="#C054FF"/>
+    <text x="825" y="44" font-family="-apple-system, Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">ЗАМЕДЛЕНИЕ</text>
+  </g>
+
+  <!-- Card 3: Steam (Healthy) -->
+  <g transform="translate(50, 351)">
+    <rect width="900" height="90" rx="12" fill="#16181D" stroke="#2A2E39" stroke-width="1"/>
+    <rect x="16" y="16" width="48" height="48" rx="8" fill="#1D2027"/>
+    <text x="40" y="48" font-size="24" text-anchor="middle">🎮</text>
+    
+    <text x="80" y="38" font-family="-apple-system, Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#F3F4F6">Steam</text>
+    <rect x="135" y="24" width="60" height="18" rx="4" fill="#1D2027"/>
+    <text x="165" y="37" font-family="-apple-system, Segoe UI, sans-serif" font-size="10" fill="#9CA3AF" text-anchor="middle">GAMING</text>
+    
+    <text x="80" y="58" font-family="-apple-system, Segoe UI, sans-serif" font-size="12" fill="#00E599">Работает стабильно (Магазин и API доступны без ограничений)</text>
+    
+    <!-- Metrics & Badge -->
+    <text x="710" y="44" font-family="Consolas, monospace" font-size="14" fill="#9CA3AF">34 ms</text>
+    <rect x="770" y="26" width="110" height="28" rx="6" fill="#00E599"/>
+    <text x="825" y="44" font-family="-apple-system, Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#0D0E11" text-anchor="middle">РАБОТАЕТ</text>
+  </g>
+
+  <!-- Card 4: Telegram (Healthy) -->
+  <g transform="translate(50, 454)">
+    <rect width="900" height="90" rx="12" fill="#16181D" stroke="#2A2E39" stroke-width="1"/>
+    <rect x="16" y="16" width="48" height="48" rx="8" fill="#1D2027"/>
+    <text x="40" y="48" font-size="24" text-anchor="middle">✈️</text>
+    
+    <text x="80" y="38" font-family="-apple-system, Segoe UI, sans-serif" font-size="16" font-weight="bold" fill="#F3F4F6">Telegram</text>
+    <rect x="155" y="24" width="70" height="18" rx="4" fill="#1D2027"/>
+    <text x="190" y="37" font-family="-apple-system, Segoe UI, sans-serif" font-size="10" fill="#9CA3AF" text-anchor="middle">MESSAGING</text>
+    
+    <text x="80" y="58" font-family="-apple-system, Segoe UI, sans-serif" font-size="12" fill="#00E599">Работает стабильно (MTProto соединение установлено, потерь нет)</text>
+    
+    <!-- Metrics & Badge -->
+    <text x="710" y="44" font-family="Consolas, monospace" font-size="14" fill="#9CA3AF">28 ms</text>
+    <rect x="770" y="26" width="110" height="28" rx="6" fill="#00E599"/>
+    <text x="825" y="44" font-family="-apple-system, Segoe UI, sans-serif" font-size="11" font-weight="bold" fill="#0D0E11" text-anchor="middle">РАБОТАЕТ</text>
+  </g>
+
+  <!-- Bottom Status Footer -->
+  <rect x="20" y="560" width="960" height="40" rx="16" fill="#16181D"/>
+  <circle cx="50" cy="580" r="4" fill="#00E599"/>
+  <text x="64" y="584" font-family="-apple-system, Segoe UI, sans-serif" font-size="12" fill="#F3F4F6">Диагностика завершена: 8 сервисов проверено за 1.2 сек</text>
+  <text x="940" y="584" font-family="-apple-system, Segoe UI, sans-serif" font-size="11" fill="#606774" text-anchor="end">100% Local-First • Zero Tracking • Apache-2.0</text>
+</svg>
