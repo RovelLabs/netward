@@ -1,0 +1,19 @@
+# .NET build outputs
+bin/
+obj/
+dist/
+artifacts/
+release/
+*.tmp
+*.pdb
+
+# Local data & temporary caches
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+
+# Scratch & research temp files
+scratch_*.py
+competitors_raw.json

@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/NetWard.App/NetWard.App.csproj" />
+    <Project Path="src/NetWard.Cli/NetWard.Cli.csproj" />
+    <Project Path="src/NetWard.Core/NetWard.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/NetWard.Tests/NetWard.Tests.csproj" />
+  </Folder>
+</Solution>
