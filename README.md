@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/RovelLabs/new-prpect/actions"><img src="https://img.shields.io/badge/CI-Passing-00E599?style=flat-square&logo=githubactions" alt="CI Status" /></a>
+  <a href="https://github.com/RovelLabs/netward/actions"><img src="https://img.shields.io/badge/CI-Passing-00E599?style=flat-square&logo=githubactions" alt="CI Status" /></a>
   <a href="https://dotnet.microsoft.com/download/dotnet/8.0"><img src="https://img.shields.io/badge/.NET-8.0%20%7C%2010.0-512BD4?style=flat-square&logo=dotnet" alt=".NET 8" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-blue?style=flat-square" alt="License" /></a>
   <a href="PRIVACY.md"><img src="https://img.shields.io/badge/Privacy-100%25%20Local--First-00E599?style=flat-square" alt="Privacy Shield" /></a>
@@ -51,8 +51,8 @@ Instead of guessing why **Discord voice dropped**, why **YouTube is buffering at
 
 | Platform | Interface | Status | Release Package | Guide |
 | :--- | :--- | :---: | :--- | :--- |
-| **Windows 10 / 11** | Native GUI (WPF) | ✅ **Stable** | [NetWard-v0.1.0-Windows-x64.zip](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/NetWard-v0.1.0-Windows-x64.zip) | [Windows Releases](RELEASES.md) |
-| **Windows x64** | Standalone CLI | ✅ **Stable** | [netward-cli-v0.1.0-windows-x64.exe](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/netward-cli-v0.1.0-windows-x64.exe) | [Windows Releases](RELEASES.md) |
+| **Windows 10 / 11** | Native GUI (WPF) | ✅ **Stable** | [NetWard-v0.1.0-Windows-x64.zip](https://github.com/RovelLabs/netward/releases/download/v0.1.0/NetWard-v0.1.0-Windows-x64.zip) | [Windows Releases](RELEASES.md) |
+| **Windows x64** | Standalone CLI | ✅ **Stable** | [netward-cli-v0.1.0-windows-x64.exe](https://github.com/RovelLabs/netward/releases/download/v0.1.0/netward-cli-v0.1.0-windows-x64.exe) | [Windows Releases](RELEASES.md) |
 | **Android (8.0–15)** | Mobile Companion | 📋 **Specified** | Direct APK (in build) | [Android Guide](docs/ANDROID.ru.md) |
 | **Linux / macOS** | Terminal CLI | ✅ **Stable** | Build from source | [Linux Guide](docs/BUILD_LINUX.md) |
 
@@ -62,9 +62,9 @@ Instead of guessing why **Discord voice dropped**, why **YouTube is buffering at
 
 Standalone release packages for Windows:
 1. **Desktop GUI Zip Archive (Recommended):**  
-   Download **[NetWard-v0.1.0-Windows-x64.zip](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/NetWard-v0.1.0-Windows-x64.zip)**, extract and double-click `install.cmd` to set up Desktop and Start Menu shortcuts with zero admin privileges.
+   Download **[NetWard-v0.1.0-Windows-x64.zip](https://github.com/RovelLabs/netward/releases/download/v0.1.0/NetWard-v0.1.0-Windows-x64.zip)**, extract and double-click `install.cmd` to set up Desktop and Start Menu shortcuts with zero admin privileges.
 2. **Standalone Terminal CLI:**  
-   Download **[netward-cli-v0.1.0-windows-x64.exe](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/netward-cli-v0.1.0-windows-x64.exe)** for PowerShell / CMD.
+   Download **[netward-cli-v0.1.0-windows-x64.exe](https://github.com/RovelLabs/netward/releases/download/v0.1.0/netward-cli-v0.1.0-windows-x64.exe)** for PowerShell / CMD.
 3. Verification instructions and SHA-256 hashes are listed in **[RELEASES.md](RELEASES.md)**.
 
 ---
@@ -78,13 +78,6 @@ Developed by the open-source engineering group at **RovelLabs**:
 * **Security & Privacy Engineer** — STRIDE threat model, zero-knowledge storage, IP anonymization.
 * **UI/UX Designer** — Modern Graphite Dark design system and fluid WPF transitions.
 * See full team and acknowledgments in **[AUTHORS.md](AUTHORS.md)**.
-
----
-
-## 🔄 Repository Renaming
-
-Official repository slug: **`netward`** (`https://github.com/RovelLabs/netward`).  
-If the URL displays as `new-prpect`, rename it in GitHub repository settings: `Settings -> General -> Repository name -> netward`.
 
 ---
 
@@ -119,8 +112,8 @@ netward simulate discord
 
 ```bash
 # Clone the repository
-git clone https://github.com/RovelLabs/new-prpect.git
-cd new-prpect
+git clone https://github.com/RovelLabs/netward.git
+cd netward
 
 # Build entire solution
 dotnet build
@@ -154,3 +147,4 @@ NetWard is designed as a **pure network diagnostic, measurement, and local resil
 ## 📄 License
 
 Licensed under the **[Apache License, Version 2.0](LICENSE)**. Free to use, modify, and distribute for everyone.
+

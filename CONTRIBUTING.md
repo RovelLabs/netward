@@ -1,4 +1,4 @@
-# Contributing to NetWard
+﻿# Contributing to NetWard
 
 Thank you for your interest in contributing to **NetWard**! NetWard is an open-source, local-first internet resilience and diagnostic companion.
 
@@ -20,8 +20,8 @@ Thank you for your interest in contributing to **NetWard**! NetWard is an open-s
 
 ### Clone & Build
 ```bash
-git clone https://github.com/RovelLabs/new-prpect.git
-cd new-prpect
+git clone https://github.com/RovelLabs/netward.git
+cd netward
 
 # Build entire solution
 dotnet build
@@ -50,3 +50,4 @@ dotnet run --project src/NetWard.Cli/NetWard.Cli.csproj -- simulate discord
 2. Ensure all tests pass (`dotnet test`).
 3. Commit your changes with clear Conventional Commits (`feat: add Telegram DC probing`, `fix: handle WSAECONNRESET on Windows 11`).
 4. Push to your fork and submit a Pull Request.
+

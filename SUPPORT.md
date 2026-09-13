@@ -1,4 +1,4 @@
-# NetWard Support & Community
+﻿# NetWard Support & Community
 
 Welcome to the NetWard community! Here is how to get help, report issues, and interact with the project.
 
@@ -8,7 +8,7 @@ Welcome to the NetWard community! Here is how to get help, report issues, and in
 
 - **Documentation:** Browse the `docs/` directory for detailed architecture, build guides, and network troubleshooting FAQs.
 - **Frequently Asked Questions:** See [docs/FAQ.md](docs/FAQ.md) for solutions to common questions.
-- **GitHub Discussions:** Join discussions on our GitHub repository: `https://github.com/RovelLabs/new-prpect/discussions`.
+- **GitHub Discussions:** Join discussions on our GitHub repository: `https://github.com/RovelLabs/netward/discussions`.
 
 ---
 
@@ -23,3 +23,4 @@ Welcome to the NetWard community! Here is how to get help, report issues, and in
 ## 3. Security Vulnerabilities
 
 For security issues, please refer to our [Security Policy](SECURITY.md). Do not submit security vulnerabilities via public issues.
+

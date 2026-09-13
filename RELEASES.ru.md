@@ -1,4 +1,4 @@
-# Релизы и загрузка NetWard для ПК (Windows)
+﻿# Релизы и загрузка NetWard для ПК (Windows)
 
 Здесь собраны официальные автономные сборки **NetWard** для персональных компьютеров под управлением Windows 10 и Windows 11.
 
@@ -8,8 +8,8 @@
 
 | Вариант установки | Описание | Размер | Контрольная сумма SHA-256 | Ссылка |
 | :--- | :--- | :---: | :--- | :--- |
-| **Портативный архив (Desktop GUI)** | Полный графический интерфейс со встроенным инсталлятором `install.cmd` | ~150 МБ | `BE3954A0B97F317A84A125BA10BCCF3D673C0D952F16FB57B56C827A5DE57B65` | [NetWard-v0.1.0-Windows-x64.zip](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/NetWard-v0.1.0-Windows-x64.zip) |
-| **Автономный CLI (Командная строка)** | Одиночный исполняемый файл для терминала (PowerShell / CMD) | ~40 МБ | `AFB0348DDD2C556CA6A9BA3BAE91E077BF9BECAC65F5A6DE89A5B25ED3B87A43` | [netward-cli-v0.1.0-windows-x64.exe](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/netward-cli-v0.1.0-windows-x64.exe) |
+| **Портативный архив (Desktop GUI)** | Полный графический интерфейс со встроенным инсталлятором `install.cmd` | ~150 МБ | `BE3954A0B97F317A84A125BA10BCCF3D673C0D952F16FB57B56C827A5DE57B65` | [NetWard-v0.1.0-Windows-x64.zip](https://github.com/RovelLabs/netward/releases/download/v0.1.0/NetWard-v0.1.0-Windows-x64.zip) |
+| **Автономный CLI (Командная строка)** | Одиночный исполняемый файл для терминала (PowerShell / CMD) | ~40 МБ | `AFB0348DDD2C556CA6A9BA3BAE91E077BF9BECAC65F5A6DE89A5B25ED3B87A43` | [netward-cli-v0.1.0-windows-x64.exe](https://github.com/RovelLabs/netward/releases/download/v0.1.0/netward-cli-v0.1.0-windows-x64.exe) |
 
 ---
 
@@ -47,3 +47,4 @@ Get-FileHash -Algorithm SHA256 NetWard-v0.1.0-Windows-x64.zip
 1. Нажмите **«Подробнее» (More info)**.
 2. Нажмите **«Выполнить в любом случае» (Run anyway)**.
 3. Программа полностью безопасна, не содержит скрытых служб, не требует root/admin прав и имеет открытый исходный код.
+

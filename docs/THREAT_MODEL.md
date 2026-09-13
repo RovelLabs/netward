@@ -1,4 +1,4 @@
-# Threat Model & Security Architecture
+﻿# Threat Model & Security Architecture
 
 **Document Metadata:**
 - **Product:** NetWard
@@ -48,7 +48,7 @@
 | **3. MITM & Spoofed TCP Resets** | TSPU or local rogue network intercepts connections and injects fake packets (RST / HTTP 451). | **MEDIUM** | NetWard is designed precisely to *detect* this. The socket prober catches `WSAECONNRESET` and mismatched TLS certificates, correctly flagging them as TSPU interference rather than trusting the injected data. |
 | **4. DNS Manipulation / Poisoning** | Local ISP DNS injects false IP addresses or NXDOMAIN for prohibited services. | **HIGH** | NetWard does not rely solely on system DNS (`Dns.GetHostAddressesAsync`). It queries trusted Encrypted DNS-over-HTTPS (DoH) endpoints (Cloudflare/Quad9) to cross-reference resolution against the local ISP DNS. Discrepancies are flagged as DNS Poisoning. |
 | **5. Malicious Configuration Injection** | A malicious actor crafts a malformed `config.json` or registry file attempting path traversal or code injection. | **MEDIUM** | Strict JSON schema parsing with strongly-typed deserialization (`System.Text.Json`). File paths are sandboxed within `%LOCALAPPDATA%\NetWard`; external paths are rejected. Invalid configs gracefully fallback to immutable default definitions. |
-| **6. Fake Releases / Phishing Mirrors** | Attackers create copycat repos or Telegram channels distributing malware under the NetWard name. | **HIGH** | Official GitHub repository is permanently anchored at `https://github.com/RovelLabs/new-prpect`. Release artifacts are published with reproducible build instructions and SHA-256 hashes. Security advisories warn against third-party mirrors. |
+| **6. Fake Releases / Phishing Mirrors** | Attackers create copycat repos or Telegram channels distributing malware under the NetWard name. | **HIGH** | Official GitHub repository is permanently anchored at `https://github.com/RovelLabs/netward`. Release artifacts are published with reproducible build instructions and SHA-256 hashes. Security advisories warn against third-party mirrors. |
 | **7. Tracking & Metadata Leakage** | User network activity or visited services leaked to third-party observers. | **HIGH** | Zero external telemetry servers. Diagnostic checks probe public endpoints directly without proxying. Export feature includes an automated redaction engine that masks local IP addresses, machine names, and private network prefixes before output. |
 | **8. Corrupted Local Storage** | Sudden power loss or crash corrupts local configuration, causing startup freeze. | **LOW** | Atomic file writes: configuration writes to a temporary file (`config.json.tmp`) and performs an atomic replace. If deserialization fails, NetWard resets to default state and notifies the user safely. |
 | **9. Supply-Chain Dependency Attack** | Malicious third-party NuGet package introduced into build pipeline. | **CRITICAL** | Zero dependency bloat philosophy: NetWard relies almost entirely on core .NET BCL (`System.Net`, `System.Text.Json`, `System.Threading`). Third-party dependencies are strictly pinned with SHA-512 package lockfiles (`packages.lock.json`) and scanned via GitHub Dependency Review & Dependabot. |
@@ -60,3 +60,4 @@
 ## 3. Vulnerability Disclosure Policy
 
 Security vulnerabilities must be reported through GitHub Private Security Advisories or via email to `security@rovel.org`. Maintainers acknowledge reports within 48 hours and release patched security advisories within 7 days.
+
