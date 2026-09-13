@@ -20,7 +20,9 @@ if (Test-Path $appTemp) {
 Write-Host "1. Publishing NetWard.App (Windows x64 Standalone)..." -ForegroundColor Yellow
 dotnet publish src/NetWard.App/NetWard.App.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o $appTemp
 
-Write-Host "2. Creating Windows Desktop Zip Archive..." -ForegroundColor Yellow
+Write-Host "2. Adding installer scripts and creating Desktop Zip Archive..." -ForegroundColor Yellow
+Copy-Item installer\install.ps1 $appTemp\
+Copy-Item installer\install.cmd $appTemp\
 $zipPath = "$distDir\NetWard-v$Version-Windows-x64.zip"
 Compress-Archive -Path "$appTemp\*" -DestinationPath $zipPath -CompressionLevel Optimal
 

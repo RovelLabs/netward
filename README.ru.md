@@ -56,11 +56,54 @@ NetWard рассеивает «туман войны» вашего интерн
 
 ## 🖥️ Поддержка платформ и загрузка
 
-| Платформа | Интерфейс | Статус | Файл сборки |
-| :--- | :--- | :---: | :--- |
-| **Windows 10 / 11** | Нативный Desktop UI (WPF) | ✅ Стабильно | [NetWard.App.exe](https://github.com/RovelLabs/new-prpect/releases/latest) |
-| **Windows / Linux / macOS** | Консольный CLI | ✅ Стабильно | [netward-cli](https://github.com/RovelLabs/new-prpect/releases/latest) |
-| **Android / iOS** | Библиотека ядра | 📋 В разработке | Включено в `NetWard.Core` |
+| Платформа | Интерфейс | Статус | Файл сборки | Инструкция |
+| :--- | :--- | :---: | :--- | :--- |
+| **Windows 10 / 11** | Нативный Desktop UI (WPF) | ✅ **Стабильно** | [NetWard-v0.1.0-Windows-x64.zip](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/NetWard-v0.1.0-Windows-x64.zip) | [Инструкция](RELEASES.ru.md) |
+| **Windows x64** | Автономный CLI (Терминал) | ✅ **Стабильно** | [netward-cli-v0.1.0-windows-x64.exe](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/netward-cli-v0.1.0-windows-x64.exe) | [Инструкция](RELEASES.ru.md) |
+| **Android (8.0–15)** | Мобильный компаньон | 📋 **Спецификация готова** | APK (в сборке) | [Документация Android](docs/ANDROID.ru.md) |
+| **Linux / macOS** | Консольный CLI | ✅ **Стабильно** | Сборка из исходников | [Инструкция Linux](docs/BUILD_LINUX.md) |
+
+---
+
+## 📦 Релизы на ПК (Windows)
+
+Для пользователей ПК доступны готовые официальные сборки:
+1. **Портативный архив с инсталлятором (Рекомендуется):**  
+   Скачайте **[NetWard-v0.1.0-Windows-x64.zip](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/NetWard-v0.1.0-Windows-x64.zip)**, распакуйте и запустите `install.cmd` — программа установится в систему и создаст ярлыки на Рабочем столе и в меню «Пуск» без необходимости прав администратора.
+2. **Автономный консольный клиент:**  
+   Скачайте **[netward-cli-v0.1.0-windows-x64.exe](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/netward-cli-v0.1.0-windows-x64.exe)** для запуска из PowerShell / CMD.
+3. Полный список файлов, инструкции и контрольные суммы SHA-256 доступны в документе **[RELEASES.ru.md](RELEASES.ru.md)**.
+
+---
+
+## 📱 NetWard на Android (Мобильный компаньон)
+
+Мобильная версия NetWard решает ключевую проблему мобильного интернета в России:
+* **Сравнение сотовых операторов и домашнего Wi-Fi:** Выявляет, блокируется ли сервис (Discord, YouTube, голосовые звонки) именно на вышках сотовой связи вашего оператора (МТС, МегаФон, Билайн, Т2) или это сбой домашнего роутера.
+* **Мобильный игровой радар:** Замер пинга, джиттера и потерь пакетов для *Roblox Mobile, Standoff 2, Brawl Stars, PUBG Mobile*.
+* **Виджет в шторке быстрых настроек:** Проверка состояния сети в один клик без запуска тяжелых приложений.
+* **Нулевой разряд аккумулятора:** В отличие от VPN, NetWard не держит тяжелые шифрованные туннели и не разряжает батарею.
+* **Без Google Play:** Автономная установка через APK-файл из GitHub Releases и каталогов открытого ПО (F-Droid).
+* Полное описание архитектуры и спецификация мобильной версии: **[docs/ANDROID.ru.md](docs/ANDROID.ru.md)**.
+
+---
+
+## 👥 Разработчики и команда проекта
+
+Проект развивается открытой командой инженеров и исследователей под эгидой **RovelLabs**:
+* **RovelLabs Engineering Group** ([@RovelLabs](https://github.com/RovelLabs)) — общее руководство, релиз-инженерия и инфраструктура.
+* **Senior Software & Systems Architect** — модульная архитектура ядра, асинхронный сокетный движок, система симуляции.
+* **Network & Telecommunications Researcher** — исследование эвристик ТСПУ/DPI, детекция сбросов TCP RST и игровой радар.
+* **Security & Privacy Engineer** — модель угроз STRIDE, локальное хранение данных без трекеров, авто-маскирование IP-адресов.
+* **UI/UX Designer** — графитовая дизайн-система *Graphite & Pulse*, адаптивная верстка и доступность.
+* Подробный список участников и благодарности: **[AUTHORS.md](AUTHORS.md)**.
+
+---
+
+## 🔄 Имя репозитория на GitHub
+
+Целевое официальное имя репозитория: **`netward`** (`https://github.com/RovelLabs/netward`).  
+Если текущий адрес на GitHub отображается как `new-prpect`, репозиторий переименовывается в настройках GitHub: `Settings -> General -> Repository name -> netward`.
 
 ---
 
@@ -99,10 +142,10 @@ git clone https://github.com/RovelLabs/new-prpect.git
 cd new-prpect
 
 # Сборка всего решения
-dotnet build
+dotnet build NetWard.sln
 
 # Запуск модульных тестов
-dotnet test
+dotnet test NetWard.sln
 
 # Запуск графического приложения
 dotnet run --project src/NetWard.App/NetWard.App.csproj

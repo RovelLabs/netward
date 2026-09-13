@@ -8,6 +8,7 @@ public interface IDiagnosticRedactor
 {
     string RedactText(string input);
     string ExportReportToMarkdown(DiagnosticReport report);
+    string ExportReportToHtml(DiagnosticReport report);
 }
 
 public class DiagnosticRedactor : IDiagnosticRedactor
@@ -140,6 +141,60 @@ public class DiagnosticRedactor : IDiagnosticRedactor
 
         sb.AppendLine("---");
         sb.AppendLine("*Generated automatically by NetWard — Open-Source Internet Resilience & Diagnostic Companion.*");
+
+        return sb.ToString();
+    }
+
+    public string ExportReportToHtml(DiagnosticReport report)
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine("<!DOCTYPE html>");
+        sb.AppendLine("<html lang=\"ru\">");
+        sb.AppendLine("<head>");
+        sb.AppendLine("  <meta charset=\"UTF-8\">");
+        sb.AppendLine("  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+        sb.AppendLine("  <title>NetWard Diagnostic Report</title>");
+        sb.AppendLine("  <style>");
+        sb.AppendLine("    body { background-color: #0D0E11; color: #F3F4F6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 24px; }");
+        sb.AppendLine("    .container { max-width: 900px; margin: 0 auto; }");
+        sb.AppendLine("    .header { background: #16181D; border: 1px solid #2A2E39; border-radius: 12px; padding: 20px; margin-bottom: 20px; }");
+        sb.AppendLine("    .badge { display: inline-block; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: bold; }");
+        sb.AppendLine("    .badge-healthy { background: #00E599; color: #0D0E11; }");
+        sb.AppendLine("    .badge-blocked { background: #FF334B; color: #FFF; }");
+        sb.AppendLine("    .badge-throttled { background: #C054FF; color: #FFF; }");
+        sb.AppendLine("    .card { background: #16181D; border: 1px solid #2A2E39; border-radius: 10px; padding: 16px; margin-bottom: 12px; }");
+        sb.AppendLine("    table { width: 100%; border-collapse: collapse; margin-top: 10px; }");
+        sb.AppendLine("    th, td { text-align: left; padding: 10px; border-bottom: 1px solid #2A2E39; }");
+        sb.AppendLine("    th { color: #9CA3AF; font-size: 12px; text-transform: uppercase; }");
+        sb.AppendLine("  </style>");
+        sb.AppendLine("</head>");
+        sb.AppendLine("<body>");
+        sb.AppendLine("  <div class=\"container\">");
+        sb.AppendLine("    <div class=\"header\">");
+        sb.AppendLine("      <h2>🛡️ NetWard Telemetry Report</h2>");
+        sb.AppendLine($"      <p>Report ID: <code>{report.ReportId}</code> | Time: {report.GeneratedAt:yyyy-MM-dd HH:mm:ss} UTC</p>");
+        sb.AppendLine("      <p>Privacy: 100% Redacted &amp; Local-First</p>");
+        sb.AppendLine("    </div>");
+        sb.AppendLine("    <h3>Services Reachability</h3>");
+        sb.AppendLine("    <table>");
+        sb.AppendLine("      <tr><th>Service</th><th>Category</th><th>Status</th><th>Latency</th><th>Diagnosis</th></tr>");
+
+        foreach (var v in report.Verdicts)
+        {
+            string badgeClass = v.Status switch
+            {
+                ServiceStatus.Healthy => "badge-healthy",
+                ServiceStatus.Blocked => "badge-blocked",
+                ServiceStatus.Throttled => "badge-throttled",
+                _ => "badge-blocked"
+            };
+            sb.AppendLine($"      <tr><td><b>{RedactText(v.DisplayName)}</b></td><td>{v.Category}</td><td><span class=\"badge {badgeClass}\">{v.Status}</span></td><td>{v.OverallLatencyMs:F0} ms</td><td>{RedactText(v.SummaryRu)}</td></tr>");
+        }
+
+        sb.AppendLine("    </table>");
+        sb.AppendLine("  </div>");
+        sb.AppendLine("</body>");
+        sb.AppendLine("</html>");
 
         return sb.ToString();
     }

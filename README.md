@@ -49,11 +49,42 @@ Instead of guessing why **Discord voice dropped**, why **YouTube is buffering at
 
 ## 🖥️ Platform Support & Downloads
 
-| Platform | Interface | Status | Release Package |
-| :--- | :--- | :---: | :--- |
-| **Windows 10 / 11** | Native GUI (WPF) | ✅ Stable | [NetWard.App.exe](https://github.com/RovelLabs/new-prpect/releases/latest) |
-| **Windows / Linux / macOS** | Terminal CLI | ✅ Stable | [netward-cli](https://github.com/RovelLabs/new-prpect/releases/latest) |
-| **Android / iOS** | Companion Core | 📋 Planned v1.0 | Built into `NetWard.Core` |
+| Platform | Interface | Status | Release Package | Guide |
+| :--- | :--- | :---: | :--- | :--- |
+| **Windows 10 / 11** | Native GUI (WPF) | ✅ **Stable** | [NetWard-v0.1.0-Windows-x64.zip](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/NetWard-v0.1.0-Windows-x64.zip) | [Windows Releases](RELEASES.md) |
+| **Windows x64** | Standalone CLI | ✅ **Stable** | [netward-cli-v0.1.0-windows-x64.exe](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/netward-cli-v0.1.0-windows-x64.exe) | [Windows Releases](RELEASES.md) |
+| **Android (8.0–15)** | Mobile Companion | 📋 **Specified** | Direct APK (in build) | [Android Guide](docs/ANDROID.ru.md) |
+| **Linux / macOS** | Terminal CLI | ✅ **Stable** | Build from source | [Linux Guide](docs/BUILD_LINUX.md) |
+
+---
+
+## 📦 Windows Releases & Setup
+
+Standalone release packages for Windows:
+1. **Desktop GUI Zip Archive (Recommended):**  
+   Download **[NetWard-v0.1.0-Windows-x64.zip](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/NetWard-v0.1.0-Windows-x64.zip)**, extract and double-click `install.cmd` to set up Desktop and Start Menu shortcuts with zero admin privileges.
+2. **Standalone Terminal CLI:**  
+   Download **[netward-cli-v0.1.0-windows-x64.exe](https://github.com/RovelLabs/new-prpect/releases/download/v0.1.0/netward-cli-v0.1.0-windows-x64.exe)** for PowerShell / CMD.
+3. Verification instructions and SHA-256 hashes are listed in **[RELEASES.md](RELEASES.md)**.
+
+---
+
+## 👥 Authors & Engineering Team
+
+Developed by the open-source engineering group at **RovelLabs**:
+* **RovelLabs Engineering Group** ([@RovelLabs](https://github.com/RovelLabs)) — Open-Source Stewardship & Release Engineering.
+* **Senior Software & Systems Architect** — Core modular engine, socket diagnostics, simulation subsystem.
+* **Network & Telecommunications Researcher** — DPI & TSPU analysis, TCP RST classification, gaming radar.
+* **Security & Privacy Engineer** — STRIDE threat model, zero-knowledge storage, IP anonymization.
+* **UI/UX Designer** — Modern Graphite Dark design system and fluid WPF transitions.
+* See full team and acknowledgments in **[AUTHORS.md](AUTHORS.md)**.
+
+---
+
+## 🔄 Repository Renaming
+
+Official repository slug: **`netward`** (`https://github.com/RovelLabs/netward`).  
+If the URL displays as `new-prpect`, rename it in GitHub repository settings: `Settings -> General -> Repository name -> netward`.
 
 ---
 
